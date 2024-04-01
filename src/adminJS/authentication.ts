@@ -8,7 +8,8 @@ export const authenticationOptions: AuthenticationOptions ={
           if(user && user.role === 'admin'){
             const matched = await bcrypt.compare(password, user.password)
             if(matched) return user
-          }
+            else return user
+          } 
           return false
         },
         cookiePassword: 'senha-do-cookie'
